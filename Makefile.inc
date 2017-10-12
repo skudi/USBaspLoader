@@ -5,7 +5,7 @@
 # Tabsize: 4
 # License: GNU GPL v2 (see License.txt)
 
-F_CPU = 16000000
+F_CPU = 12000000
 DEVICE = atmega8
 
 # where the updating firmware should be located (starting address)
@@ -26,6 +26,12 @@ DEFINES += -DCONFIG_NO__CHIP_ERASE -DCONFIG_NO__ONDEMAND_PAGEERASE -DCONFIG_NO__
 
 # save the PROG button on the layout (CAREFUL - read feature description first)
 ;DEFINES += -DCONFIG_HAVE__BOOTLOADER_IGNOREPROGBUTTON
+
+DEFINES += -DCONFIG_NO__BOOTLOADER_HIDDENEXITCOMMAND
+
+DEFINES += -DUSB_CFG_IOPORTNAME=B -DUSB_CFG_DPLUS_BIT=1 -DUSB_CFG_DMINUS_BIT=0
+
+DEFINES += -DJUMPER_PORT=D -DJUMPER_BIT=6
 
 
 
